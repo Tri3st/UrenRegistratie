@@ -30,6 +30,18 @@ public class Uren{
     this.opmerking="-";
   }
 
+  public int getWeekNr() {
+    return this.weekNr;
+  }
+  
+  public double getOveruren() {
+    return this.overuren;
+  }
+  
+  public double getUrenGewerkt() {
+    return this.urengewerkt;
+  }
+
   public String getBeginTijdStr() {
     String temp = String.format("%0d:%0d",this.beginTijd.getUren(),this.beginTijd.getMinuten());
     return temp;
@@ -60,11 +72,11 @@ public class Uren{
   
   public String toString (){
     String temp = String.format(" %2d | %s |",this.weekNr,this.datum);
-    temp += String.format("  %s  |  %s  |  %s  | %4.1f | %4.1f | %-16s%n",this.beginTijd.toString(),this.eindTijd.toString(),this.pauze.toString(),this.urengewerkt,this.overuren,this.opmerking);
+    temp += String.format("  %s  |  %s  |  %s  | %5.2f | %5.2f | %-16s%n",this.beginTijd.toString(),this.eindTijd.toString(),this.pauze.toString(),this.urengewerkt,this.overuren,this.opmerking);
     return temp;
   }
 
-  public static int getWeeknr(String date) {
+  public int getWeeknr(String date) {
     int day = Integer.parseInt(date.substring(0,2));
     int month = Integer.parseInt(date.substring(3,5));
     int year = Integer.parseInt("20"+date.substring(6,8));

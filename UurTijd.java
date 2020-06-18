@@ -11,12 +11,24 @@
     this.uren = 0;
     this.minuten = minuten;
   }
+
+  public UurTijd(String tijdStr){
+    String[] tijdje = tijdStr.split(":");
+    this.uren =  Integer.parseInt(tijdje[0]);
+    this.minuten =  Integer.parseInt(tijdje[1]);
+  }
   
   public void setTijd(int uur, int minuten){
     this.uren = uur;
     this.minuten = minuten;
   }
   
+  public void setTijd(String tijdStr){
+    String[] tijdje = tijdStr.split(":");
+    this.uren =  Integer.parseInt(tijdje[0]);
+    this.minuten =  Integer.parseInt(tijdje[1]);
+  }
+
   public String getTijd(){
     String temp ="";
     temp += this.uren + ":" + this.minuten; 
