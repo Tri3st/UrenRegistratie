@@ -5,14 +5,16 @@ class Main {
     //testblok met data
     ArrayList<Uren> myList = new ArrayList<Uren>();
     myList.add(new Uren());
-    Uren uur2 = new Uren("10-05-20", new UurTijd(5,30), new UurTijd(15,00), new UurTijd(0,30));
+    Uren uur2 = new Uren("08-06-20", new UurTijd(4,45), new UurTijd(17,30), new UurTijd(0,30));
     myList.add(uur2);
-    Uren uur3 = new Uren("11-05-20", new UurTijd(4,30), new UurTijd(16,15), new UurTijd(0,30));
+    Uren uur3 = new Uren("09-06-20", new UurTijd(5,45), new UurTijd(15,15), new UurTijd(0,30));
     myList.add(uur3);
-    Uren uur4 = new Uren("12-05-20", new UurTijd(4,45), new UurTijd(17,15), new UurTijd(0,30));
+    Uren uur4 = new Uren("10-06-20", new UurTijd(4,45), new UurTijd(16,30), new UurTijd(0,30));
     myList.add(uur4);
-    Uren uur5 = new Uren("13-05-20", new UurTijd(6,30), new UurTijd(14,45), new UurTijd(0,30));
+    Uren uur5 = new Uren("11-06-20", new UurTijd(4,45), new UurTijd(16,00), new UurTijd(0,30));
     myList.add(uur5);
+    Uren uur6 = new Uren("12-06-20", new UurTijd(5,45), new UurTijd(16,00), new UurTijd(0,30));
+    myList.add(uur6);
     boolean quit = false;
     Scanner scanner = new Scanner(System.in);
     while (true) {

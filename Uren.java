@@ -11,7 +11,7 @@ public class Uren{
   private String opmerking;
   
   public Uren() {
-    this.datum = "12-06-20";
+    this.datum = "02-06-20";
     this.weekNr = getWeeknr(datum);
     this.beginTijd = new UurTijd(5,0);
     this.eindTijd = new UurTijd(13,30);
