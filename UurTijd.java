@@ -21,21 +21,6 @@
     this.decimalen = toDouble();
   }
   
-  /*
-   * dit doen we met de constructor
-   *
-  public void setTijd(int uur, int minuten){
-    this.uren = uur;
-    this.minuten = minuten;
-  }
-  
-  public void setTijd(String tijdStr){
-    String[] tijdje = tijdStr.split(":");
-    this.uren =  Integer.parseInt(tijdje[0]);
-    this.minuten =  Integer.parseInt(tijdje[1]);
-  }
-  */
-  
   public int getUren() {
     return this.uren;
   }

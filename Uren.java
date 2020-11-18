@@ -29,6 +29,16 @@ public class Uren{
     this.opmerking="-";
   }
   
+  public Uren(UurDatum datumobj, UurTijd beginTijd, UurTijd eindTijd, UurTijd pauze) {
+    this.datum = datumobj;
+    this.weekNr = datum.getWeek();
+    this.beginTijd = new UurTijd(beginTijd.getUren(),beginTijd.getMinuten());
+    this.eindTijd = new UurTijd(eindTijd.getUren(),eindTijd.getMinuten());
+    this.pauze = new UurTijd(pauze.getUren(),pauze.getMinuten());
+    this.urengewerkt = calculateGewerkt();
+    this.opmerking="-";
+  }
+  
   public int getWeekNr() {
     return this.weekNr;
   }
