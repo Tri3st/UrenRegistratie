@@ -16,7 +16,12 @@ class Main {
     Uren uur6 = new Uren("12-06-20", new UurTijd(5,45), new UurTijd(16,00), new UurTijd(0,30));
     myList.add(uur6);
     boolean quit = false;
+    System.out.println("maand?");
     Scanner scanner = new Scanner(System.in);
+    int mnd = scanner.nextInt();
+    overZicht(myList);
+    System.out.println("overuren van maand " + mnd + "("+ getMaand(mnd, false) +") : " + berekenOverurenMnd(myList, mnd));
+
     while (true) {
       printMenu();
       int action = scanner.nextInt();
@@ -60,7 +65,7 @@ class Main {
      scanner.nextLine();
      while (true) {
        datum = scanner.nextLine();
-       if (datum.matches("\\d{2}-\\d{2}-\\d{2}")) {
+       if (datum.matches("\\d{1,2}-\\d{1,2}-\\d{2}")) {
          break;
        }        
        System.out.println("Wrong date format ! use dd-mm-yy");
@@ -130,6 +135,63 @@ class Main {
 
 
   }
+  //maand 3 = maart dus niet 0-indexed
+  public static double berekenOverurenMnd(ArrayList<Uren> lijstje, int maand){
+    double sum = 0.0;
+    for (int i=0; i<lijstje.size();i++){
+      if(Integer.parseInt(lijstje.get(i).getDatum().substring(3,5)) == maand){
+      sum += lijstje.get(i).getOveruren();
+      }
+    }
+    return sum;
+  }
+  
+  private static String getMaand(int mnd, boolean zeroIndx){
+    String m ="";
+    if (zeroIndx) mnd++;
+    switch (mnd){
+      case 1: 
+        m += "Januari";
+      break;
+      case 2: 
+        m += "Februari";
+      break;
+      case 3: 
+        m += "Maart";
+      break;
+      case 4: 
+        m += "April";
+      break;
+      case 5: 
+        m += "Mei";
+      break;
+      case 6: 
+        m += "Juni";
+      break;
+      case 7: 
+        m += "Juli";
+      break;
+      case 8: 
+        m += "Augustus";
+      break;
+      case 9: 
+        m += "September";
+      break;
+      case 10: 
+        m += "Oktober";
+      break;
+      case 11: 
+        m += "November";
+      break;
+      case 12: 
+        m += "December";
+      break;
+      default: 
+        m += "UNKNOW";
+      break;
+    }
+    return m;
+  }
 
   public static void printMenu() {
    // clrScr();
@@ -142,7 +204,7 @@ class Main {
 
   public static void clrScr() {
     System. out. print("\033[H\033[2J");
-    System. out. flush();
+    System.out.flush();
   }
-
+  
 }
